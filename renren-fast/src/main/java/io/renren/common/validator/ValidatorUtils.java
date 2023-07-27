@@ -9,7 +9,6 @@
 package io.renren.common.validator;
 
 import io.renren.common.exception.RRException;
-import io.renren.common.utils.Constant;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -46,9 +45,5 @@ public class ValidatorUtils {
             }
             throw new RRException(msg.toString());
         }
-    }
-
-    public static void validateEntity(Object object, Constant.CloudService type) {
-        validateEntity(object, type.getValidatorGroupClass());
     }
 }

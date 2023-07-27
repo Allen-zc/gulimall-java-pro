@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -37,7 +37,7 @@ public class ScheduleConfig {
         prop.put("org.quartz.threadPool.threadCount", "20");
         prop.put("org.quartz.threadPool.threadPriority", "5");
         //JobStore配置
-        prop.put("org.quartz.jobStore.class", "org.springframework.scheduling.quartz.LocalDataSourceJobStore");
+        prop.put("org.quartz.jobStore.class", "org.quartz.impl.jdbcjobstore.JobStoreTX");
         //集群配置
         prop.put("org.quartz.jobStore.isClustered", "true");
         prop.put("org.quartz.jobStore.clusterCheckinInterval", "15000");
