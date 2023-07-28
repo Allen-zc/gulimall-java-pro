@@ -31,7 +31,7 @@ public class AttrController {
     private AttrService attrService;
 
     /**
-     * 列表
+     * 查询属性列表
      */
     @RequestMapping("/list")
     //@RequiresPermissions("product:attr:list")
