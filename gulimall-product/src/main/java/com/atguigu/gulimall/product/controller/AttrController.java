@@ -38,6 +38,7 @@ public class AttrController {
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrService.queryPage(params);
 
+
         return R.ok().put("page", page);
     }
 
