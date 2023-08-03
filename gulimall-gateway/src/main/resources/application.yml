@@ -11,6 +11,13 @@ spring:
           predicates:
             - Query=url,qq
 
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**,/hello
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
         #没有匹配到的，交给后台
         - id: admin_route
           uri: lb://renren-fast #负载均衡到哪里
@@ -20,6 +27,11 @@ spring:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
 
 
+
+
+##前段项目，/api
+## http://localhost:88/api/captcha.jpg   http://localhost:8080/renren-fast/captcha.jpg
+## http://localhost:88/api/product/category/list/tree http://localhost:10000/product/category/list/tree
 
 
 
